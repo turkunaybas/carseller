@@ -1,13 +1,13 @@
-import React, { useContext,} from "react";
+import React, { useContext, } from "react";
 import { CarContext } from '../CarContext/CarContext';
-import {  Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
 
 
 // başlık componentim selectedi kontrol ediyor eğer selected doluysa giriş yapılmış demektir ona göre çıkış butonu veriyor 
 // ve araba eklemeye izin veriyor eğer boşsa giriş yaptırıyor kullancıı girişi yok demektir o zaman
 function Main() {
-    const {  selected ,setSelected} = useContext(CarContext); // selectedi contexten okuduk
+    const { selected, setSelected } = useContext(CarContext); // selectedi contexten okuduk
     const navigate = useNavigate();
     return (
         <div>
@@ -23,20 +23,18 @@ function Main() {
 
                 }}
             >
-                <h2>ARABANI.AL</h2>
-                {/* <Link to="/addcar"><button className="customizedButton addCarButton">add car</button></Link> */}
+
+                <Link style={{color:"black"}} to="/">
+                    <h2>ARABANI.AL</h2>   
+                      </Link>
 
 
-
-
-
-
-                {selected !== "" && selected!==undefined ? (<div style={{ display: "flex" }}>
+                {selected !== "" && selected !== undefined ? (<div style={{ display: "flex" }}>
                     <Link to="/addcar"><button className="customizedButton addCarButton">Araba Ekle</button>
                     </Link>
 
                     <Link to="/signin">
-                        <button onClick={()=>{navigate('/');setSelected("");  }} className="customizedButton addCarButton" style={{ marginLeft: 15, backgroundColor: "#F2F2F2", color: "black" }}> Çıkış Yap</button>
+                        <button onClick={() => { navigate('/'); setSelected(""); }} className="customizedButton addCarButton" style={{ marginLeft: 15, backgroundColor: "#F2F2F2", color: "black" }}> Çıkış Yap</button>
                     </Link>
 
 
