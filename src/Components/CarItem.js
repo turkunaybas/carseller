@@ -7,6 +7,8 @@ function CarItem({car}) {
     const {setCurrentCar,setCarList } = useContext(CarContext);
     const navigate = useNavigate();
    
+
+    // seçilen arabanın görüntülenme sayısını bir arttırıp detayına yönlendiren fonksiyon
     function selectCarHandler() {
         setCurrentCar(car);
         navigate('/details');
@@ -37,7 +39,7 @@ function CarItem({car}) {
       }}
       src={car.file}
       onClick={selectCarHandler}
-    //   onClick={}
+
     ></img>
     <div
       style={{

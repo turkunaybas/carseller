@@ -9,6 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function CarDetail({ car }) {
     const { currentCar, setCurrentCar } = useContext(CarContext);
 
+    // mail gönderme fonks
     const sendEmail = (e) => {
         e.preventDefault();
 
@@ -23,6 +24,7 @@ function CarDetail({ car }) {
         e.target.reset();
     }
 
+    // mail modalını açtık
     const onMail = (mail) => {
         setMaill(mail);
         setShow(true);

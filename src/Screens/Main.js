@@ -4,9 +4,10 @@ import {  Link } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
 
 
-
+// başlık componentim selectedi kontrol ediyor eğer selected doluysa giriş yapılmış demektir ona göre çıkış butonu veriyor 
+// ve araba eklemeye izin veriyor eğer boşsa giriş yaptırıyor kullancıı girişi yok demektir o zaman
 function Main() {
-    const {  selected ,setSelected} = useContext(CarContext);
+    const {  selected ,setSelected} = useContext(CarContext); // selectedi contexten okuduk
     const navigate = useNavigate();
     return (
         <div>

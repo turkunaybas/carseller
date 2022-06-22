@@ -8,21 +8,25 @@ function SignUp() {
 
     const [details, setDetails] = useState({ name: "", no: "", password: "", mail: "", surname: "" });
 
+
+    // ekrandan girdiğimiz verileri alıp yeni bir kişi objesi oluşturduğumuz fonks bunun içine ekrandan aldığımız bilgileri gönderdik
     const NewUser = (details) => {
         return (
             { mail: details.mail, password: details.password, name: details.name }
         )
     };
 
+    // kullanıcı kaydetme fonks
     const Save = (details) => {
         if (details.name !== "" && details.mail !== "" && details.password !== "") {
 
         
-
+//kullanıcı lsitemde aynı kullanıcının olup olmadığını kotrol ettim
                 if (userList.find(item => item.mail === details.mail)) {
                     alert("aynı kullanıcı kaydedilemez")
                    
                 }
+                // aynı kullanıcı yoksa ekrandan aldığım bilgileri newUser fonks kullanrak yeni obje oluşturup kullanıcı listeme kaydettim
                 else {
                     setUserList([...userList, NewUser(details)]);
                     setDetails({ name: "", no: "", password: "", mail: "", surname: "" });

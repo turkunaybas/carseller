@@ -24,7 +24,7 @@ function AddCar() {
     const [mail, setMail] = useState(selected.mail)
 
 
-
+// araba eklerken doldurulacak alanlarden verileri alıp boş olup olmadığını kontrol ederek yeni bir araba objesi oluşturup kaydeden fonks
     const Save = () => {
         if (!year || !price || !description || !color || !brand|| !file) {
             alert("Boş Alanları Doldurunuz")
@@ -32,22 +32,19 @@ function AddCar() {
         else {
             setCarList([...carList, {brand,color,year,description,price,file,mail}]);
             navigate('/')
-        
-
+    
         }
-        
-       
-
         console.log(carList, "kayıtlarr")
 
     };
 
+    // resin yükleme fonksiyonu
     function handleImagePreview(e) {
         console.log(e.target.files);
         setFile(URL.createObjectURL(e.target.files[0]));
     }
   
-
+// devam ete tıkladığımız resim yükleme ekranına yönlendirirken alanların boş olup olmadığını kotrol eden fonks
     function nextHandler() {
         if (!year || !price || !description || !color || !brand) {
             alert("Boş alanları doldurunuz")

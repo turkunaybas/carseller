@@ -16,7 +16,10 @@ function Menu() {
     const [color, setColor] = useState("");
     const [model, setModel] = useState("");
 
+
+    // select içinde seçim yaptığım her defada renk ve marka değişimine göre araba listemi güncelleyen fonks
     useEffect(() => {
+
         let carListe = carList.filter((x) => x.brand.includes(model) && x.color.includes(color));
         setCarListt(carListe);
         console.log(carListt, "yeni")
@@ -38,7 +41,9 @@ function Menu() {
                             label="Renk"
                             onChange={(event) => setColor(event.target.value)}
                         >
+                            <MenuItem value={""}>Tümü</MenuItem>
                             <MenuItem value={"Pembe"}>Pembe</MenuItem>
+                            <MenuItem value={"Pembe"}>Kırmızı</MenuItem>
                             <MenuItem value={"Beyaz"}>Beyaz</MenuItem>
                             <MenuItem value={"Yeşil"}>Yeşil</MenuItem>
                             <MenuItem value={"Siyah"}>Siyah</MenuItem>
@@ -58,6 +63,7 @@ function Menu() {
                             label="Marka"
                             onChange={(event) => setModel(event.target.value)}
                         >
+                            <MenuItem value={""}>Tümü</MenuItem>
                             <MenuItem value={"Mercedes"}>Mercedes</MenuItem>
                             <MenuItem value={"Audi"}>Auidi</MenuItem>
                             <MenuItem value={"Kia"}>Kia</MenuItem>
